@@ -1,4 +1,5 @@
 import React from 'react'
+import {AiOutlinePlus} from 'react-icons/ai'
 
 const CardProduct = ({ product, addToCart }) => {
     return (
@@ -10,7 +11,7 @@ const CardProduct = ({ product, addToCart }) => {
                 <p className="text-gray-400 text-base">{product.price}</p>
                 </div>
                 <div className='text-lg font-semibold'>
-                <button onClick={() => addToCart(product)} className="focus:outline-none bg-purple-700 hover:bg-purple-800 text-white font-bold py-2 px-2 rounded-full inline-flex items-center">+</button>
+                <button onClick={() => addToCart(product)} className="focus:outline-none bg-purple-700 hover:bg-purple-800 text-white font-bold py-2 px-2 rounded-full inline-flex items-center"> <AiOutlinePlus/> </button>
                 </div>
             </div>
         </div>

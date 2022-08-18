@@ -1,4 +1,6 @@
 import React from 'react';
+import {AiFillDelete} from 'react-icons/ai'
+import {AiOutlinePlus, AiOutlineMinus} from 'react-icons/ai'
 
 const CartItem = ({ cartItem, removeFromCart, addItemQty, removeItemQty }) => {
   return (
@@ -11,12 +13,14 @@ const CartItem = ({ cartItem, removeFromCart, addItemQty, removeItemQty }) => {
           <div className="text-lg py-2">
             <div className="flex flex-row space-x-2 w-full items-center rounded-lg">
               <div>
+                {cartItem.quantity !== 26 ? (
                 <button
                   onClick={() => addItemQty(cartItem)}
                   className="focus:outline-none bg-purple-700 hover:bg-purple-800 text-white font-bold py-1 px-1 rounded-full inline-flex items-center"
                 >
-                  +
+                  <AiOutlinePlus />
                 </button>
+                ) : alert("No Product are available here")}
               </div>
               <p>{cartItem.quantity}</p>
               <button
@@ -24,13 +28,13 @@ const CartItem = ({ cartItem, removeFromCart, addItemQty, removeItemQty }) => {
                 onClick={() => removeItemQty(cartItem)}
                 className="focus:outline-none bg-purple-700 hover:bg-purple-800 text-white font-bold py-1 px-1 rounded-full inline-flex items-center"
               >
-                -
+                <AiOutlineMinus/>
               </button>
               <button
                 onClick={() => removeFromCart(cartItem)}
                 className="focus:outline-none bg-purple-700 hover:bg-purple-800 text-white font-bold py-1 px-1 rounded-full inline-flex items-center"
               >
-                Remove
+               <AiFillDelete />
               </button>
             </div>
           </div>
